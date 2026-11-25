@@ -1,0 +1,4 @@
+- `Desktop` ：虚拟桌面的鼠标坐标
+- `Physical` : 物理坐标
+- `Scaled` : 逻辑坐标
+- `Scale` : 缩放比
