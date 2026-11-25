@@ -4,7 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-active-win-pos-rs = "0.11"
 device_query = "4"
 display-config = "0.1"
 display-info = "0.5"
