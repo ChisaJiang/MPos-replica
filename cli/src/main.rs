@@ -1,8 +1,14 @@
 use device_query::{DeviceQuery, DeviceState};
+use std::{thread, time::Duration};
 fn main() {
-    // 创建设备状态对象
+    let once = std::env::args().any(|any| any == "--once");
     let device = DeviceState::new();
-    // 读取当前鼠标状态（包括鼠标的坐标和按键）
-    let mouse = device.get_mouse();
-    println!("X: {}, Y: {}", mouse.coords.0, mouse.coords.1);
+    loop {
+        let (desktop_x, desktop_y) = device.get_mouse().coords;
+        println!("X: {desktop_x}, Y: {desktop_y}");
+        thread::sleep(Duration::from_millis(100));
+        if once {
+            break;
+        }
+    }
 }
